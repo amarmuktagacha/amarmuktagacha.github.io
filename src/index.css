@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  /* Base surfaces */
+  --color-plaster: #F1E7D8;
+  --color-plaster-deep: #E4D5BE;
+  --color-paper: #FBF6EC;
+
+  /* Ink */
+  --color-ink: #2B1E16;
+  --color-ink-soft: #5A4636;
+
+  /* Heritage brick + brass */
+  --color-brick: #8C3B2E;
+  --color-brick-deep: #5E2620;
+  --color-brass: #B8892B;
+  --color-brass-soft: #E8CE95;
+  --color-patina: #2F6E62;
+
+  --font-display: "Tiro Bangla", "Noto Serif Bengali", serif;
+  --font-body: "Hind Siliguri", "Noto Sans Bengali", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-plaster);
+  color: var(--color-ink);
+  -webkit-tap-highlight-color: transparent;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: var(--color-brass);
+  color: var(--color-ink);
+}
+
+/* faint plaster-wall texture */
+.bg-plaster-texture {
+  background-image:
+    radial-gradient(circle at 15% 25%, rgba(44,30,22,0.03) 0, transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(44,30,22,0.03) 0, transparent 45%);
+  background-color: var(--color-plaster);
+}
+
+/* brick-arch top border, evoking Zamindar Bari's arched facades */
+.arch-top {
+  border-top: 3px solid var(--color-brass);
+  border-radius: 999px 999px 0 0 / 14px 14px 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-brass);
+  outline-offset: 2px;
+}
